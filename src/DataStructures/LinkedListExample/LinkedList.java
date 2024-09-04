@@ -158,12 +158,12 @@ public class LinkedList {
     }
 
     public boolean insert(int index,  int value) {
-        if (index<0 || index >= length) {
+        if (index<0 || index > length) {
             return false;
         } else if (index == 0){
             prepend(value);
             return true;
-        } else if(index == length-1){
+        } else if(index == length){
             append(value);
             return true;
         } else {
