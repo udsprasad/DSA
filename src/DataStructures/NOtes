@@ -1,0 +1,20 @@
+omega - Ω -> best
+theta - θ -> average
+Big O - O -> worst case
+
+
+drop constants
+to simple big O we drop constants
+example n,2n, 3n will we use O(n) only
+
+dropping non-dominants
+example n²+n here ignore n now it looks like n²
+
+o(1) -> examples n+n;
+o(2) -> examples n+n+n will be treated as o(1)
+
+0(logn) -> divide and conquer
+
+very important -> big 0 website -> https://www.bigocheatsheet.com/
+
+
