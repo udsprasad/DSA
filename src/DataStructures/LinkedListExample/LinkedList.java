@@ -177,7 +177,6 @@ public class LinkedList {
     }
 
     // hardest part.
-
     public void reverse() {
         Node temp = head;
         head = tail;
