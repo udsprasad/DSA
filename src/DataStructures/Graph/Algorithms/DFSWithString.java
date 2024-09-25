@@ -1,7 +1,9 @@
 package DataStructures.Graph.Algorithms;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class DFSWithString {
 
@@ -12,7 +14,6 @@ public class DFSWithString {
     public static void main(String[] args) throws InterruptedException {
         HashMap<String, LinkedList<String>> graph = new HashMap<>();
 
-        int NoOfVertices = 4;
         String source = "D";
         String[][] edges ={{"A","B"},{"A","D"},{"B","C"},{"B","D"}};
 
@@ -32,21 +33,19 @@ public class DFSWithString {
     }
 
     static void dfs(HashMap<String, LinkedList<String>> graph, String source) throws InterruptedException {
-        HashMap<String,Boolean> visited = new HashMap<>();
+        Set<String> visited = new HashSet<>();
         dfsRec(graph, visited, source);
     }
 
-    static void dfsRec(HashMap<String, LinkedList<String>> graph, HashMap<String,Boolean> visited, String source) throws InterruptedException {
-        if(!visited.containsKey(source)) {
-            visited.put(source,Boolean.TRUE);
-        }
+    static void dfsRec(HashMap<String, LinkedList<String>> graph, Set<String> visited, String source) throws InterruptedException {
+        visited.add(source);
 
         Thread.sleep(1000);
         System.out.print("  "+ source);
-        System.out.println(visited);
+        System.out.println(" \n visited "+visited);
 
         for(String s:graph.get(source)){
-            if(!visited.containsKey(s)){
+            if(!visited.contains(s)){
                 dfsRec(graph,visited,s);
             }
         }
